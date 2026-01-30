@@ -1,15 +1,16 @@
 from custom_requester.custom_requester import CustomRequester
 
+
 class UserAPI(CustomRequester):
     """
     Класс для работы с API пользователей.
     """
 
-    def __init__(self, session, base_url=None):
+    def __init__(self, session, base_url: str = None):
         super().__init__(session, base_url=base_url)
         self.session = session
 
-    def get_user_info(self, user_id, expected_status=200):
+    def get_user_info(self, user_id: int | str, expected_status: int = 200):
         """
         Получение информации о пользователе.
         :param user_id: ID пользователя.
@@ -21,7 +22,7 @@ class UserAPI(CustomRequester):
             expected_status=expected_status
         )
 
-    def delete_user(self, user_id, expected_status=204):
+    def delete_user(self, user_id: int | str, expected_status: int = 204):
         """
         Удаление пользователя.
         :param user_id: ID пользователя.

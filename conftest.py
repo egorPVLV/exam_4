@@ -2,7 +2,7 @@
 
 import pytest
 import requests
-from constants import BASE_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT
+from constants import BASE_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, NAME, PASSWORD
 from custom_requester.custom_requester import CustomRequester
 from utils.data_generator import DataGenerator
 from api.api_manager import ApiManager
@@ -12,8 +12,8 @@ from api.api_manager import ApiManager
 @pytest.fixture(scope="session")
 def test_user():
 
-    name = "api1@gmail.com"
-    password = "asdqwe123Q"
+    name = NAME
+    password = PASSWORD
 
     return {
         "fullName": name,
@@ -23,7 +23,7 @@ def test_user():
     }
 
 @pytest.fixture(scope="session")
-def registered_user(requester, test_user):
+def registered_user(requester: CustomRequester, test_user: dict[str, str]):
     """
     Фикстура для регистрации и получения данных зарегистрированного пользователя.
     """
@@ -57,7 +57,7 @@ def session():
 
 
 @pytest.fixture(scope="session")
-def api_manager(session):
+def api_manager(session: requests.Session):
     """
     Фикстура для создания экземпляра ApiManager.
     """

@@ -13,7 +13,7 @@ class CustomRequester:
         "Accept": "application/json"
     }
 
-    def __init__(self, session, base_url):
+    def __init__(self, session, base_url:str):
         self.session = session
         self.base_url = base_url
         self.headers = self.base_headers.copy()
@@ -21,7 +21,7 @@ class CustomRequester:
         self.logger.setLevel(logging.INFO)
 
 
-    def send_request(self, method, endpoint, data=None, expected_status=200, need_logging=True):
+    def send_request(self, method: str, endpoint:str, data: dict[str,str]=None, expected_status: int=200, need_logging: bool=True):
         """
         Универсальный метод для отправки запросов.
         :param method: HTTP метод (GET, POST, PUT, DELETE и т.д.).
@@ -51,7 +51,7 @@ class CustomRequester:
         self.session.headers.update(self.headers)  # Обновляем заголовки в текущей сессии
 
 
-    def log_request_and_response(self, response):
+    def log_request_and_response(self, response: requests.Response):
         try:
             request = response.request
             GREEN = '\033[32m'

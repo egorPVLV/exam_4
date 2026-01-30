@@ -10,3 +10,5 @@ LOGIN_ENDPOINT = "/login"
 REGISTER_ENDPOINT = "/register"
 MOVIES_ENDPOINT = "/movies"
 
+NAME = "api1@gmail.com"
+PASSWORD = "asdqwe123Q"
