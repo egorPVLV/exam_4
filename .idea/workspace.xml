@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="">
+    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/movies_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/movies_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/user_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_requester/custom_requester.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_requester/custom_requester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/api/test_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/test_movies.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +47,12 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor": "Debug",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_genre.executor": "Run",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter.executor": "Run",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination.executor": "Run",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure.executor": "Run",
     "Python tests.Python tests in test_movies.py.executor": "Run",
     "Python.movies_api.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -72,29 +71,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI">
-    <configuration name="movies_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Экзамен" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/movies_api.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
@@ -111,7 +87,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,11 +99,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_get_movies_list&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,11 +115,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_movies.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -155,17 +131,33 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/api/test_movies.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Экзамен" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_response_structure&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI" />
-        <item itemvalue="Python tests.Python tests in test_movies.py" />
-        <item itemvalue="Python.movies_api" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +176,15 @@
       <option name="presentableId" value="Default" />
       <updated>1768985380462</updated>
     </task>
+    <task id="LOCAL-00001" summary="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы.">
+      <option name="closed" value="true" />
+      <created>1769766929636</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769766929637</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,5 +197,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы." />
+    <option name="LAST_COMMIT_MESSAGE" value="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы." />
   </component>
 </project>

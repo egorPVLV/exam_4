@@ -6,11 +6,10 @@ class MoviesAPI:
         self.session = session
         self.base_url = base_url
 
-    def get_movies(self, genre: str = None, page: int = 1, limit: int = 10):
+    def get_movies(self, genreId: int = 1, page: int = 1, pageSize: int = 10):
         """Получить список фильмов с фильтрами и пагинацией"""
-        params = {'page': page, 'limit': limit}
-        if genre:
-            params['genre'] = genre
+        params = {'page': page, 'pageSize': pageSize, 'genreId': genreId}
+
 
         response = self.session.get(
             f"{self.base_url}{MOVIES_ENDPOINT}",

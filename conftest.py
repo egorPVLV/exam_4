@@ -6,7 +6,8 @@ from constants import BASE_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, NAME, PASSWOR
 from custom_requester.custom_requester import CustomRequester
 from utils.data_generator import DataGenerator
 from api.api_manager import ApiManager
-
+import string
+import random
 
 
 @pytest.fixture(scope="session")
@@ -62,3 +63,9 @@ def api_manager(session: requests.Session):
     Фикстура для создания экземпляра ApiManager.
     """
     return ApiManager(session, base_url=BASE_URL)
+
+
+@pytest.fixture(scope="session")
+def random_string():
+    """Генератор случайных строк"""
+    return ''.join(random.choices(string.ascii_letters + string.digits, k=20))
