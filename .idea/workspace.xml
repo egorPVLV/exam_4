@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы.">
+    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/movies_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/movies_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/api/test_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/test_movies.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,18 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "egorPVLV"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;egorPVLV&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/egorPVLV/exam_4",
-    "accountId": "f1fe4c99-1889-4908-ad04-427172b0dd27"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/egorPVLV/exam_4&quot;,
+    &quot;accountId&quot;: &quot;f1fe4c99-1889-4908-ad04-427172b0dd27&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -42,26 +42,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_genre.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure.executor": "Run",
-    "Python tests.Python tests in test_movies.py.executor": "Run",
-    "Python.movies_api.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#2 on проверка5",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/egor6/PycharmProjects/Экзамен"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_genre.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_movies.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movies_api.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#2 on проверка5&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/egor6/PycharmProjects/Экзамен&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\egor6\PycharmProjects\Экзамен" />
@@ -87,7 +89,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -99,11 +101,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_create_movies&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,7 +117,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_delete_movies&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -154,10 +156,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies" />
         <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure" />
         <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter" />
       </list>
     </recent_temporary>
   </component>
@@ -184,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769766929637</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров">
+      <option name="closed" value="true" />
+      <created>1769771649737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1769771649737</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,6 +210,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы." />
-    <option name="LAST_COMMIT_MESSAGE" value="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы." />
+    <MESSAGE value="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров" />
   </component>
 </project>

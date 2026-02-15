@@ -1,5 +1,6 @@
 import pytest
 from api.api_manager import ApiManager
+from constants import NAME, PASSWORD
 
 
 @pytest.mark.api
@@ -55,3 +56,36 @@ class TestMoviesAPI:
         for movie in data['movies']:
             assert all(field in movie for field in required_fields)
             assert 'name' in movie['genre']
+
+
+
+    def test_create_movies(self, api_manager: ApiManager):
+        """Позитив: Создание фильма """
+        login_response = api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+
+        result = api_manager.movies_api.post_movies(name="Название фильма 629", price=100,
+                                                    description="Описание фильма 627", location="MSK", published=True,
+                                                    genreId=1)
+
+        assert result['status_code'] == 201
+        data = result['data']
+        assert 'movies' in data
+
+
+    def test_delete_movies(self, api_manager: ApiManager):
+        """Позитив: Удаление фильма """
+        login_response = api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+
+        result = api_manager.movies_api.delete_movies(id=12573)
+
+        assert result['status_code'] == 200
+
+    def test_patch_movies(self, api_manager: ApiManager):
+        """Позитив: Редактирование фильма """
+        login_response = api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+
+        result = api_manager.movies_api.patch_movies(name="Название фильма 629", price=100,
+                                                    description="Описание фильма 627", location="MSK", published=True,
+                                                    genreId=1, id=12573)
+
+        assert result['status_code'] == 200
