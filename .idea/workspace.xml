@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров">
+    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Добавлены такие методы, как post,delete, patch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/movies_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/movies_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/api/test_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/test_movies.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769771649737</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавлены такие методы, как post,delete, patch">
+      <option name="closed" value="true" />
+      <created>1771155710114</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1771155710114</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Указал в методах типы входящих значений&#10;&#10;Объвил на класс @pytest.mark.api&#10;&#10;Убрал логин и пароль в константы&#10;&#10;Добавил метод post_movies&#10;&#10;Далее буду исправлять неточности и добавлять остальные методы." />
     <MESSAGE value="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров" />
+    <MESSAGE value="Добавлены такие методы, как post,delete, patch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены такие методы, как post,delete, patch" />
   </component>
 </project>

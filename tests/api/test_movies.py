@@ -61,7 +61,7 @@ class TestMoviesAPI:
 
     def test_create_movies(self, api_manager: ApiManager):
         """Позитив: Создание фильма """
-        login_response = api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+        api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
 
         result = api_manager.movies_api.post_movies(name="Название фильма 629", price=100,
                                                     description="Описание фильма 627", location="MSK", published=True,
@@ -74,15 +74,15 @@ class TestMoviesAPI:
 
     def test_delete_movies(self, api_manager: ApiManager):
         """Позитив: Удаление фильма """
-        login_response = api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+        api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
 
         result = api_manager.movies_api.delete_movies(id=12573)
 
-        assert result['status_code'] == 200
+        assert result['status_code'] == 204
 
     def test_patch_movies(self, api_manager: ApiManager):
         """Позитив: Редактирование фильма """
-        login_response = api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+        api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
 
         result = api_manager.movies_api.patch_movies(name="Название фильма 629", price=100,
                                                     description="Описание фильма 627", location="MSK", published=True,

@@ -52,7 +52,7 @@ class MoviesAPI:
             "id": id,
         }
 
-        response = self.session.post(
+        response = self.session.delete(
             f"{self.base_url}{MOVIES_ENDPOINT}",
             params=params
         )
@@ -76,7 +76,7 @@ class MoviesAPI:
             "genreId": genreId
         }
 
-        response = self.session.post(
+        response = self.session.patch(
             f"{self.base_url}{MOVIES_ENDPOINT}",
             params=id,
             data=data
