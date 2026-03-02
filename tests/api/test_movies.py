@@ -1,6 +1,7 @@
 import pytest
 from api.api_manager import ApiManager
 from constants import NAME, PASSWORD
+from utils.data_generator import DataGenerator
 
 
 @pytest.mark.api
@@ -57,35 +58,47 @@ class TestMoviesAPI:
             assert all(field in movie for field in required_fields)
             assert 'name' in movie['genre']
 
-
-
     def test_create_movies(self, api_manager: ApiManager):
         """Позитив: Создание фильма """
         api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
 
-        result = api_manager.movies_api.post_movies(name="Название фильма 629", price=100,
-                                                    description="Описание фильма 627", location="MSK", published=True,
-                                                    genreId=1)
+        response =  api_manager.movies_api.create_movie({
+            "name": DataGenerator.generate_random_movie_name(),
+            "imageUrl": "https://poknok.art/uploads/posts/2022-11/thumbs/1668713844_33-poknok-art-p-ptitsi-belom-fone-foto-35.png",
+            "price": DataGenerator.generate_random_int(99, 1000),
+            "description": DataGenerator.generate_random_text(),
+            "location": DataGenerator.generate_random_choice(['MSK', 'SPB']),
+            "published": DataGenerator.generate_random_bool(),
+            "genreId": api_manager.movies_api.genre_id(),
+        }, expected_status=201)
 
-        assert result['status_code'] == 201
-        data = result['data']
-        assert 'movies' in data
+        assert 'id' in response.json()
 
 
-    def test_delete_movies(self, api_manager: ApiManager):
-        """Позитив: Удаление фильма """
-        api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
-
-        result = api_manager.movies_api.delete_movies(id=12573)
-
-        assert result['status_code'] == 204
-
-    def test_patch_movies(self, api_manager: ApiManager):
+    def test_patch_movies(self, api_manager: ApiManager, create_movies):
         """Позитив: Редактирование фильма """
-        api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
 
-        result = api_manager.movies_api.patch_movies(name="Название фильма 629", price=100,
-                                                    description="Описание фильма 627", location="MSK", published=True,
-                                                    genreId=1, id=12573)
+        movie = create_movies
+        movie_id = movie['id']
 
+        result = api_manager.movies_api.patch_movies({
+            "name": DataGenerator.generate_random_movie_name(),
+            "imageUrl": "https://poknok.art/uploads/posts/2022-11/thumbs/1668713844_33-poknok-art-p-ptitsi-belom-fone-foto-35.png",
+            "price": DataGenerator.generate_random_int(99, 1000),
+            "description": DataGenerator.generate_random_text(),
+            "location": DataGenerator.generate_random_choice(['MSK', 'SPB']),
+            "published": DataGenerator.generate_random_bool(),
+            "genreId": api_manager.movies_api.genre_id(),
+        }, expected_status=200, id = movie_id)
+
+        assert result['status_code'] == 200
+
+
+    def test_delete_movies(self, api_manager: ApiManager, create_movies):
+        """Позитив: Удаление фильма """
+
+        movie = create_movies
+        movie_id = int(movie['id'])
+
+        result = api_manager.movies_api.delete_movies(id=movie_id)
         assert result['status_code'] == 200

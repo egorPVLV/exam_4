@@ -1,6 +1,8 @@
 # Генератор тестовых данных
 import random
 import string
+from typing import Any
+
 from faker import Faker
 
 faker = Faker()
@@ -44,5 +46,26 @@ class DataGenerator:
         random.shuffle(password)
 
         return ''.join(password)
+
+
+    @staticmethod
+    def generate_random_movie_name() -> str:
+        return faker.sentence()
+
+    @staticmethod
+    def generate_random_int(left, right) -> int:
+        return faker.random_int(left, right)
+
+    @staticmethod
+    def generate_random_text() -> str:
+        return faker.text()
+
+    @staticmethod
+    def generate_random_choice(objects: list) -> Any:
+        return random.choice(objects)
+
+    @staticmethod
+    def generate_random_bool(chance=66) -> bool:
+        return faker.boolean(chance)
 
 

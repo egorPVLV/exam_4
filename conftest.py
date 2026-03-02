@@ -69,3 +69,20 @@ def api_manager(session: requests.Session):
 def random_string():
     """Генератор случайных строк"""
     return ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+
+
+@pytest.fixture(scope="session")
+def create_movies(api_manager: ApiManager):
+    api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+
+    response =  api_manager.movies_api.create_movie({
+        "name": DataGenerator.generate_random_movie_name(),
+        "imageUrl": "https://poknok.art/uploads/posts/2022-11/thumbs/1668713844_33-poknok-art-p-ptitsi-belom-fone-foto-35.png",
+        "price": DataGenerator.generate_random_int(99, 1000),
+        "description": DataGenerator.generate_random_text(),
+        "location": DataGenerator.generate_random_choice(['MSK', 'SPB']),
+        "published": DataGenerator.generate_random_bool(),
+        "genreId": api_manager.movies_api.genre_id(),
+    }, expected_status=201)
+
+    return response.json()

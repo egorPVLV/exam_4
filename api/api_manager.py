@@ -7,4 +7,4 @@ class ApiManager:
         self.session = session
         self.user_api = UserAPI(session, base_url=base_url)
         self.auth_api = AuthAPI(session)
-        self.movies_api = MoviesAPI(session, base_url=base_url)
+        self.movies_api = MoviesAPI(session)
