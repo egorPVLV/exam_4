@@ -72,7 +72,7 @@ def random_string():
 
 
 @pytest.fixture(scope="session")
-def create_movies(api_manager: ApiManager):
+def random_movie(api_manager: ApiManager):
     api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
 
     response =  api_manager.movies_api.create_movie({
@@ -85,4 +85,8 @@ def create_movies(api_manager: ApiManager):
         "genreId": api_manager.movies_api.genre_id(),
     }, expected_status=201)
 
-    return response.json()
+    movie = response.json()
+    yield  movie
+
+    # удаляем фильм после завершения всех тестов, использующих фикстуру
+    api_manager.movies_api.delete_movies(id=movie["id"])

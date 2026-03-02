@@ -75,10 +75,10 @@ class TestMoviesAPI:
         assert 'id' in response.json()
 
 
-    def test_patch_movies(self, api_manager: ApiManager, create_movies):
+    def test_patch_movies(self, api_manager: ApiManager, random_movie):
         """Позитив: Редактирование фильма """
 
-        movie = create_movies
+        movie = random_movie
         movie_id = movie['id']
 
         result = api_manager.movies_api.patch_movies({
@@ -94,10 +94,10 @@ class TestMoviesAPI:
         assert result['status_code'] == 200
 
 
-    def test_delete_movies(self, api_manager: ApiManager, create_movies):
+    def test_delete_movies(self, api_manager: ApiManager, random_movie):
         """Позитив: Удаление фильма """
 
-        movie = create_movies
+        movie = random_movie
         movie_id = int(movie['id'])
 
         result = api_manager.movies_api.delete_movies(id=movie_id)
