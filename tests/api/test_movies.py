@@ -94,6 +94,25 @@ class TestMoviesAPI:
         assert result['status_code'] == 200
 
 
+
+    def test_create_reviews(self, api_manager: ApiManager, random_movie):
+        """Позитив: создание, получение, редактирование, удаление ревью"""
+        # Получаем id нового фильма
+        movie = random_movie
+        movie_id = int(movie['id'])
+        # Создаём отзыв
+        result = api_manager.movies_api.create_reviews(id=movie_id, rating = 4, text = "Хорошее кино")
+        assert result['status_code'] == 201
+        # Получаем этот отзыв
+        result = api_manager.movies_api.get_reviews(id=movie_id)
+        assert result['status_code'] == 200
+        # Редактируем отзыв
+        result = api_manager.movies_api.put_reviews(id=movie_id, rating = 3, text = "Хорошее кино, но...")
+        assert result['status_code'] == 200
+        # Удаляем отзыв
+        result = api_manager.movies_api.delete_reviews(id=movie_id)
+        assert result['status_code'] == 200
+
     def test_delete_movies(self, api_manager: ApiManager, random_movie):
         """Позитив: Удаление фильма """
 
@@ -101,4 +120,17 @@ class TestMoviesAPI:
         movie_id = int(movie['id'])
 
         result = api_manager.movies_api.delete_movies(id=movie_id)
+        assert result['status_code'] == 200
+
+    def test_create_genre(self, api_manager: ApiManager):
+        api_manager.auth_api.authenticate(user_creds=(NAME, PASSWORD))
+        # Создание нового жанра
+        result = api_manager.movies_api.create_genre(name="Test_genreуee")
+        assert result['status_code'] == 201
+        # Получение id жанра
+        id = result['data']['id']
+        result = api_manager.movies_api.get_genre(id=id)
+        assert result['status_code'] == 200
+        # Удаление жанра по id
+        result = api_manager.movies_api.delete_genre(id=id)
         assert result['status_code'] == 200
