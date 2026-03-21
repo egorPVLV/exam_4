@@ -171,7 +171,7 @@ class MoviesAPI(CustomRequester):
         result = list(map(lambda x: x['id'], response.json()))[0]
         return result
 
-    def create_genre(self, name):
+    def create_genre(self, name:str):
         response = self.send_request(
             method="POST",
             endpoint=GENRES_ENDPOINT,
@@ -185,7 +185,7 @@ class MoviesAPI(CustomRequester):
             'data': response.json()
         }
 
-    def get_genre(self, id):
+    def get_genre(self, id:int):
         response = self.send_request(
             method="GET",
             endpoint=f"{GENRES_ENDPOINT}/{id}",
@@ -198,7 +198,7 @@ class MoviesAPI(CustomRequester):
             'data': response.json()
         }
 
-    def delete_genre(self, id):
+    def delete_genre(self, id:int):
         response = self.send_request(
             method="DELETE",
             endpoint=f"{GENRES_ENDPOINT}/{id}",

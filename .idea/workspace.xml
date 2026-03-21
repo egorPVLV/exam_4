@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Патч ">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Добавил тесты для отзывов и жанров">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/movies_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/movies_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/api/test_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/test_movies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/custom_requester/custom_requester.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_requester/custom_requester.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,9 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.executor": "Run",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_genre.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies.executor": "Run",
+    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_reviews.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor": "Run",
@@ -61,6 +62,23 @@
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure.executor": "Run",
     "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_patch_movies.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_confirm_email_invalid.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_confirm_email_valid.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_not_found.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_invalid_page.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_login_invalid_credentials.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_login_user_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_logout_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_refresh_tokens_positive.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_exists.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_invalid_data.executor": "Run",
+    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_positive.executor": "Run",
     "Python tests.Python tests in test_movies.py.executor": "Run",
     "Python.movies_api.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -68,7 +86,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "#2 on проверка5",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/egor6/PycharmProjects/Экзамен"
+    "last_opened_file_path": "C:/Users/egor6/PycharmProjects/Экзамен",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -96,7 +115,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,11 +127,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_create_movies&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,11 +143,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_delete_movies&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_delete_user_not_found&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,11 +159,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_movies_response_structure&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_get_user_list_positive&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI.test_patch_movies" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -156,17 +175,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI.test_patch_movies&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_get_user_list_with_roles&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_patch_movies" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +236,31 @@
       <option name="project" value="LOCAL" />
       <updated>1771156960162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Доработал тесты на добавление, редактирование, удаление фильмов. Все тесты проходят.">
+      <option name="closed" value="true" />
+      <created>1772429094017</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772429094017</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Доработал фикстуру создания фильма">
+      <option name="closed" value="true" />
+      <created>1772439012060</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1772439012060</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Добавил тесты для отзывов и жанров">
+      <option name="closed" value="true" />
+      <created>1772710557716</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772710557716</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,6 +279,9 @@
     <MESSAGE value="Добавлены тесты с помощью pytest.mark.parametrize&#10;&#10;Убраны лишние и повторяющиеся строчки&#10;&#10;Исправлены названия параметров" />
     <MESSAGE value="Добавлены такие методы, как post,delete, patch" />
     <MESSAGE value="Исправление ошибок" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправление ошибок" />
+    <MESSAGE value="Доработал тесты на добавление, редактирование, удаление фильмов. Все тесты проходят." />
+    <MESSAGE value="Доработал фикстуру создания фильма" />
+    <MESSAGE value="Добавил тесты для отзывов и жанров" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил тесты для отзывов и жанров" />
   </component>
 </project>
