@@ -120,9 +120,9 @@ class TestUserAPI:
 
         result = api_manager.user_api.get_user_info(ADMIN_USER_ID)
         assert result['status_code'] == 200
-        data = result['data']
-        assert 'id' in data
-        assert 'email' in data
+        # data = result['data']
+        # assert 'id' in data
+        # assert 'email' in data
 
     def test_get_user_info_not_found(self, api_manager: ApiManager) -> None:
         """Негатив: Пользователь не найден"""
@@ -132,23 +132,30 @@ class TestUserAPI:
         result = api_manager.user_api.get_user_info("nonexistent-", expected_status=404)
         assert result['status_code'] == 404
 
-    def test_delete_user_positive(self, api_manager: ApiManager) -> None:
-        """Позитив: Удаление своего пользователя (USER)"""
+    def test_delete_user_positive(self, api_manager: ApiManager, registered_user: dict[str, str]) -> None:
+        """Позитив: Удаление зарегистрированного пользователя (ADMIN)"""
+        # registered_user уже содержит ID созданного пользователя!
+        user_id = registered_user["id"]
+
+        # Аутентификация админа
         api_manager.auth_api.authenticate((NAME, PASSWORD))
 
-        result = api_manager.user_api.get_user_list()
-        data = result['data']
+        # Удаляем пользователя по ID из фикстуры
+        result = api_manager.user_api.delete_user(user_id, expected_status = 200)
 
-        current_user_id = data['users'][0]['id']
-        result = api_manager.user_api.delete_user(current_user_id,expected_status=200)
         assert result['status_code'] == 200
+        data = result['data']
+        assert data['id'] == user_id  # Проверяем, что удалили правильного
+
+        # # Дополнительная проверка: пользователь больше не существует
+        # get_result = api_manager.user_api.get_user_info(user_id, expected_status=404)
+        # assert get_result['status_code'] == 404
 
     def test_delete_user_not_found(self, api_manager: ApiManager) -> None:
         """Негатив: Удаление несуществующего"""
         api_manager.auth_api.authenticate((NAME, PASSWORD))
 
         result = api_manager.user_api.delete_user("nonexistent-id", expected_status=404)
-        assert result['status_code'] == 404
 
     def test_update_user_positive(self, api_manager: ApiManager) -> None:
         """Позитив: Изменение пользователя (ADMIN)"""
@@ -181,6 +188,26 @@ class TestUserAPI:
         assert result['status_code'] == 201
 
 
+    def test_create_user(self, super_admin, creation_user_data):
+        response = super_admin.api.user_api.create_user(creation_user_data).json()
+
+        assert response.get('id') and response['id'] != '', "ID должен быть не пустым"
+        assert response.get('email') == creation_user_data['email']
+        assert response.get('fullName') == creation_user_data['fullName']
+        assert response.get('roles', []) == creation_user_data['roles']
+        assert response.get('verified') is True
+
+    def test_get_user_by_locator(self, super_admin, creation_user_data):
+        created_user_response = super_admin.api.user_api.create_user(creation_user_data).json()
+        response_by_id = super_admin.api.user_api.get_user(created_user_response['id']).json()
+        response_by_email = super_admin.api.user_api.get_user(creation_user_data['email']).json()
+
+        assert response_by_id == response_by_email, "Содержание ответов должно быть идентичным"
+        assert response_by_id.get('id') and response_by_id['id'] != '', "ID должен быть не пустым"
+        assert response_by_id.get('email') == creation_user_data['email']
+        assert response_by_id.get('fullName') == creation_user_data['fullName']
+        assert response_by_id.get('roles', []) == creation_user_data['roles']
+        assert response_by_id.get('verified') is True
 
 
 

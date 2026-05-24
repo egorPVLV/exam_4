@@ -10,6 +10,7 @@ class UserAPI(CustomRequester):
         super().__init__(session, base_url=base_url)
         self.session = session
 
+
     def register_user(self, user_data: dict, expected_status: int = 201):
         """POST /user - Создание пользователя"""
         response = self.send_request(
@@ -98,7 +99,7 @@ class UserAPI(CustomRequester):
             'data': response.json()
         }
 
-    def delete_user(self, user_id: int | str, expected_status: int = 204):
+    def delete_user(self, user_id: int | str, expected_status: int = 200):
         """
         Удаление пользователя.
         :param user_id: ID пользователя.
@@ -160,3 +161,5 @@ class UserAPI(CustomRequester):
             'data': response.json()
         }
 
+    def get_user(self, user_locator):
+        return self.send_request("GET", f"user/{user_locator}")

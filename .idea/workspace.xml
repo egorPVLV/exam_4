@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Добавил тесты для отзывов и жанров">
+    <list default="true" id="864de78a-b7a3-4e89-9180-3f4f25fccfcb" name="Changes" comment="Добавлены тесты на юзера">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/api_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/auth_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/auth_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/movies_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/movies_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/user_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/user_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/custom_requester/custom_requester.py" beforeDir="false" afterPath="$PROJECT_DIR$/custom_requester/custom_requester.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/data_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/data_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/api/test_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/api/test_user.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,50 +43,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_genre.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_reviews.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_genre.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure.executor": "Run",
-    "Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_patch_movies.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_confirm_email_invalid.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_confirm_email_valid.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_not_found.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_invalid_page.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_login_invalid_credentials.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_login_user_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_logout_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_refresh_tokens_positive.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_exists.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_invalid_data.executor": "Run",
-    "Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_positive.executor": "Run",
-    "Python tests.Python tests in test_movies.py.executor": "Run",
-    "Python.movies_api.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#2 on проверка5",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/egor6/PycharmProjects/Экзамен",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_genre.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_create_reviews.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_delete_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_get_movies_list_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_by_genre.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_filter_genre.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_genre_filter.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_invalid_pagination.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_movies_response_structure.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_movies.TestMoviesAPI.test_patch_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_confirm_email_invalid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_confirm_email_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_create_user.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_by_locator.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_not_found.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_invalid_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_login_invalid_credentials.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_login_user_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_logout_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_refresh_tokens_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_exists.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_invalid_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_positive.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_movies.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.movies_api.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#2 on проверка5&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/egor6/PycharmProjects/Экзамен&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\egor6\PycharmProjects\Экзамен" />
@@ -98,8 +100,8 @@
       <recent name="C:\Users\egor6\PycharmProjects\Экзамен\api" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI">
-    <configuration name="Python tests for tests.api.test_movies.TestMoviesAPI" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_create_user">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_create_user" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,11 +113,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_movies.TestMoviesAPI&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_create_user&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_user.TestUserAPI" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_delete_user_positive" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,11 +129,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_delete_user_positive&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_get_user_by_locator" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,11 +145,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_delete_user_not_found&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_get_user_by_locator&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_not_found" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,11 +161,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_get_user_list_positive&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_get_user_info_not_found&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.api.test_user.TestUserAPI.test_register_user_positive" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Экзамен" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,17 +177,17 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_get_user_list_with_roles&quot;" />
+      <option name="_new_target" value="&quot;tests.api.test_user.TestUserAPI.test_register_user_positive&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.api.test_movies.TestMoviesAPI" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_with_roles" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_list_positive" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI" />
-        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_not_found" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_create_user" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_by_locator" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_delete_user_positive" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_register_user_positive" />
+        <item itemvalue="Python tests.Python tests for tests.api.test_user.TestUserAPI.test_get_user_info_not_found" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +262,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772710557716</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавлены тесты на юзера">
+      <option name="closed" value="true" />
+      <created>1774107197739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1774107197739</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,6 +292,7 @@
     <MESSAGE value="Доработал тесты на добавление, редактирование, удаление фильмов. Все тесты проходят." />
     <MESSAGE value="Доработал фикстуру создания фильма" />
     <MESSAGE value="Добавил тесты для отзывов и жанров" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил тесты для отзывов и жанров" />
+    <MESSAGE value="Добавлены тесты на юзера" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены тесты на юзера" />
   </component>
 </project>

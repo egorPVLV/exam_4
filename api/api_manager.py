@@ -8,3 +8,6 @@ class ApiManager:
         self.user_api = UserAPI(session, base_url='https://auth.dev-cinescope.coconutqa.ru')
         self.auth_api = AuthAPI(session)
         self.movies_api = MoviesAPI(session)
+
+    def close_session(self):
+        self.session.close()
