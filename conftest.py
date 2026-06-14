@@ -1,3 +1,4 @@
+
 import pytest
 import requests
 from constants import BASE_URL, REGISTER_ENDPOINT, LOGIN_ENDPOINT, NAME, PASSWORD
@@ -8,18 +9,19 @@ import string
 import random
 from user import User
 from resources.user_creds import SuperAdminCreds
+from constant.roles import Roles
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture
 def test_user():
-    name = NAME
-    password = PASSWORD
+    random_password = DataGenerator.generate_random_password()
 
     return {
-        "fullName": name,
-        "password": password,
-        "passwordRepeat": password,
-        "roles": ["SUPER_ADMIN"]
+        "email": DataGenerator.generate_random_email(),
+        "fullName": DataGenerator.generate_random_name(),
+        "password": random_password,
+        "passwordRepeat": random_password,
+        "roles": [Roles.USER.value]
     }
 
 
@@ -93,6 +95,7 @@ def random_movie(api_manager: ApiManager):
     # удаляем фильм после завершения всех тестов, использующих фикстуру
     api_manager.movies_api.delete_movies(id=movie["id"])
 
+
 @pytest.fixture
 def user_session():
     user_pool = []
@@ -108,6 +111,7 @@ def user_session():
     for user in user_pool:
         user.close_session()
 
+
 @pytest.fixture
 def super_admin(user_session):
     new_session = user_session()
@@ -115,11 +119,12 @@ def super_admin(user_session):
     super_admin = User(
         SuperAdminCreds.USERNAME,
         SuperAdminCreds.PASSWORD,
-        "[SUPER_ADMIN]",
+        [Roles.SUPER_ADMIN.value],
         new_session)
 
     super_admin.api.auth_api.authenticate(super_admin.creds)
     return super_admin
+
 
 @pytest.fixture(scope="function")
 def creation_user_data(test_user):
@@ -127,6 +132,22 @@ def creation_user_data(test_user):
 
     updated_data.update({
         "verified": True,
-        "banned": False
+        "banned": False,
+        "email": DataGenerator.generate_random_email()
     })
     return updated_data
+
+
+@pytest.fixture
+def common_user(user_session, super_admin, creation_user_data):
+    new_session = user_session()
+
+    common_user = User(
+        creation_user_data['email'],
+        creation_user_data['password'],
+        [Roles.USER.value],
+        new_session)
+
+    super_admin.api.user_api.create_user(creation_user_data)
+    common_user.api.auth_api.authenticate(common_user.creds)
+    return common_user

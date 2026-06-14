@@ -162,4 +162,4 @@ class UserAPI(CustomRequester):
         }
 
     def get_user(self, user_locator):
-        return self.send_request("GET", f"user/{user_locator}")
+        return self.send_request("GET", f"/user/{user_locator}")

@@ -29,9 +29,9 @@ class MoviesAPI(CustomRequester):
         )
 
 
-    def get_movies(self, genreId: int = 1, page: int = 1, pageSize: int = 10):
+    def get_movies(self, genreId: int = 1, page: int = 1, pageSize: int = 10, minPrice: int = 1,maxPrice: int = 1000, locations: str = "SPB",):
         """Получить список фильмов с фильтрами и пагинацией"""
-        params = {'page': page, 'pageSize': pageSize, 'genreId': genreId}
+        params = {'page': page, 'pageSize': pageSize, 'genreId': genreId, 'minPrice': minPrice, 'maxPrice': maxPrice, 'locations': locations}
 
 
         response = self.session.get(
